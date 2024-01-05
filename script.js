@@ -9,4 +9,27 @@ function getComputerChoice() {
       return "SCISSORS";
   }
 }
-console.log(getComputerChoice());
+
+function playRound(playerSelection, computerSelection) {
+  if (playerSelection.toUpperCase() === computerSelection) {
+    return `It's a tie! ${playerSelection.toUpperCase()} and ${computerSelection} are friends! Try again!`;
+  }
+  if (
+    (playerSelection.toUpperCase() === "ROCK" &&
+      computerSelection === "SCISSORS") ||
+    (playerSelection.toUpperCase() === "SCISSORS" &&
+      computerSelection === "PAPER") ||
+    (playerSelection.toUpperCase() == "PAPER" && computerSelection === "ROCK")
+  ) {
+    return `You win! ${playerSelection.toUpperCase()} beats ${computerSelection}! Good job!`;
+  }
+  if (
+    (computerSelection === "ROCK" &&
+      playerSelection.toUpperCase() === "SCISSORS") ||
+    (computerSelection === "SCISSORS" &&
+      playerSelection.toUpperCase() === "PAPER") ||
+    (computerSelection == "PAPER" && playerSelection.toUpperCase() === "ROCK")
+  ) {
+    return `You lose! ${computerSelection} beats ${playerSelection.toUpperCase()}! Unlucky!`;
+  }
+}
