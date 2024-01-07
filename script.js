@@ -20,14 +20,14 @@ function playRound(playerSelection, computerSelection) {
   } else if (
     (playerSelection === "ROCK" && computerSelection === "SCISSORS") ||
     (playerSelection === "SCISSORS" && computerSelection === "PAPER") ||
-    (playerSelection == "PAPER" && computerSelection === "ROCK")
+    (playerSelection === "PAPER" && computerSelection === "ROCK")
   ) {
     playerScore++;
     return `You win! Your ${playerSelection} beats their ${computerSelection}!`;
   } else if (
     (computerSelection === "ROCK" && playerSelection === "SCISSORS") ||
     (computerSelection === "SCISSORS" && playerSelection === "PAPER") ||
-    (computerSelection == "PAPER" && playerSelection === "ROCK")
+    (computerSelection === "PAPER" && playerSelection === "ROCK")
   ) {
     computerScore++;
     return `You lose! Thier ${computerSelection} beats your ${playerSelection}!`;
