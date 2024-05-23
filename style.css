@@ -79,3 +79,27 @@ select {
     scroll-behavior: auto !important;
   }
 }
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+main {
+  display: grid;
+  place-content: center;
+  text-align: center;
+  gap: 1rem;
+}
+
+p {
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.winner {
+  color: rgb(0, 128, 0);
+}
+
+.loser {
+  color: rgb(255, 0, 0);
+}

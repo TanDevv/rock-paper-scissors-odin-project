@@ -31,6 +31,7 @@ resetBtn.addEventListener("click", function () {
   computerScore = 0;
   resultsMsg.textContent = "";
   winnerMsg.textContent = "";
+  winnerMsg.classList.remove("winner", "loser");
   playerScoreKeep.textContent = "";
   computerScoreKeep.textContent = "";
 });
@@ -49,12 +50,14 @@ function playRound(player, computer) {
     playerScore++;
     resultsMsg.textContent = `You used ${player} to their ${computer}.`;
     winnerMsg.textContent = "You win!";
+    winnerMsg.classList.remove("winner", "loser");
     playerScoreKeep.textContent = `Player: ${playerScore}`;
     computerScoreKeep.textContent = `Computer: ${computerScore}`;
   } else {
     computerScore++;
     resultsMsg.textContent = `You used ${player} to their ${computer}.`;
     winnerMsg.textContent = "You lose!";
+    winnerMsg.classList.remove("winner", "loser");
     playerScoreKeep.textContent = `Player: ${playerScore}`;
     computerScoreKeep.textContent = `Computer: ${computerScore}`;
   }
@@ -64,6 +67,7 @@ function playRound(player, computer) {
 function checkWinner() {
   if (playerScore === 3) {
     winnerMsg.textContent = "You win the game!";
+    winnerMsg.classList.add("winner");
     resultsMsg.textContent = `You won ${playerScore} rounds to their ${computerScore} rounds!`;
     playerScoreKeep.textContent = "";
     computerScoreKeep.textContent = "";
@@ -71,6 +75,7 @@ function checkWinner() {
     computerScore = 0;
   } else if (computerScore === 3) {
     winnerMsg.textContent = "You lost the game!";
+    winnerMsg.classList.add("loser");
     resultsMsg.textContent = `The Computer won ${computerScore} rounds to your ${playerScore} rounds!`;
     playerScoreKeep.textContent = "";
     computerScoreKeep.textContent = "";
