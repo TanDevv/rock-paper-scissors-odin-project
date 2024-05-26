@@ -1,6 +1,7 @@
 let choices = ["ROCK", "PAPER", "SCISSORS"];
 let playerScore = 0;
 let computerScore = 0;
+let playerName = prompt("What is your name?")
 
 function getComputerChoice() {
   return choices[Math.floor(Math.random() * choices.length)];
@@ -40,7 +41,7 @@ function playRound(player, computer) {
   if (player === computer) {
     resultsMsg.textContent = `You used ${player} to their ${computer}.`;
     winnerMsg.textContent = "Tie!";
-    playerScoreKeep.textContent = `Player: ${playerScore}`;
+    playerScoreKeep.textContent = `${playerName}: ${playerScore}`;
     computerScoreKeep.textContent = `Computer: ${computerScore}`;
   } else if (
     (player === "ROCK" && computer == "SCISSORS") ||
@@ -51,14 +52,14 @@ function playRound(player, computer) {
     resultsMsg.textContent = `You used ${player} to their ${computer}.`;
     winnerMsg.textContent = "You win!";
     winnerMsg.classList.remove("winner", "loser");
-    playerScoreKeep.textContent = `Player: ${playerScore}`;
+    playerScoreKeep.textContent = `${playerName}: ${playerScore}`;
     computerScoreKeep.textContent = `Computer: ${computerScore}`;
   } else {
     computerScore++;
     resultsMsg.textContent = `You used ${player} to their ${computer}.`;
     winnerMsg.textContent = "You lose!";
     winnerMsg.classList.remove("winner", "loser");
-    playerScoreKeep.textContent = `Player: ${playerScore}`;
+    playerScoreKeep.textContent = `${playerName}: ${playerScore}`;
     computerScoreKeep.textContent = `Computer: ${computerScore}`;
   }
   checkWinner();
