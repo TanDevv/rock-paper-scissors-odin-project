@@ -1,7 +1,16 @@
 let choices = ["ROCK", "PAPER", "SCISSORS"];
 let playerScore = 0;
 let computerScore = 0;
-let playerName = prompt("What is your name?")
+let playerName = "";
+
+function getPlayerName() {
+  playerName = prompt("What is your name?");
+
+  if (playerName === null) {
+    playerName = "Player";
+  }
+}
+getPlayerName();
 
 function getComputerChoice() {
   return choices[Math.floor(Math.random() * choices.length)];
