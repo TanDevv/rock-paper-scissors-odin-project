@@ -91,6 +91,31 @@ main {
   gap: 1rem;
 }
 
+.button-container {
+  display: flex;
+  gap: 1rem;
+}
+
+button {
+  background-color: black;
+  color: white;
+  font-weight: 700;
+  border-radius: 10%;
+  min-width: 9.375rem;
+  cursor: pointer;
+  transition: all 250ms ease-in-out;
+}
+
+button:hover {
+  background-color: rgb(19, 204, 185);
+  color: black;
+}
+
+button:active {
+  transform: scale(1.1);
+  background-color: white;
+}
+
 p {
   font-weight: 700;
   font-size: 1.2rem;
