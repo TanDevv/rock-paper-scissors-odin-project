@@ -9,6 +9,10 @@ function getPlayerName() {
   if (playerName === null) {
     playerName = "Player";
   }
+
+  if (playerName.trim() == "") {
+    playerName = "Player";
+  }
 }
 getPlayerName();
 
